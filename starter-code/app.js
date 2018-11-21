@@ -14,6 +14,7 @@ const flash      = require("connect-flash");
 
 
 const DBURL = process.env.DBURL;
+console.log(DBURL)
 mongoose.Promise = Promise;
 mongoose
   .connect(DBURL, {useMongoClient: true})
@@ -25,8 +26,10 @@ mongoose
 
 const app_name = require('./package.json').name;
 const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.')[0]}`);
-
 const app = express();
+
+console.log(path.basename(__filename))
+
 
 // Middleware Setup
 app.use(logger('dev'));

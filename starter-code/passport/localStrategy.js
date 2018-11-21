@@ -40,7 +40,7 @@ passport.use('local-signup', new LocalStrategy(  //Mismo nombre que ruta en la q
                 return next(null, false);
             } else {
                 // Destructure the body
-                const {username, email, password} = req.body;
+                const {email} = req.body;
                 const salt = bcrypt.genSaltSync(bcryptSalt);
                 const hashPass = bcrypt.hashSync(password, salt);
                 
